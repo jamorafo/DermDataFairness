@@ -3,7 +3,7 @@ rm(list=ls(all=TRUE))
 # #  Paths 
 ################################################################################
 # #  Directory. Type your own source path
-setwd("/Volumes/GoogleDrive/My\ Drive/SKINCANCER/src")
+setwd("/Users/andresmorales/Documents/GitHub/DermDataFairness/src")
 
 docPath      <- "../doc/informes/"
 outPath      <- "../output/"
@@ -28,7 +28,7 @@ library(tidyr)
 ################################################################################
 
 # # Data from the dermatologist verification
-fileName <- "20240214_samples_results.csv"
+fileName <- "20240309_samples_table.csv"
 inFile   <- paste(inPath, fileName, sep = "")
 data     <- read.csv(inFile,header = T)
 
@@ -70,7 +70,7 @@ contingency_table <- contingency_table %>%
   mutate(across(`0`:`4`, ~ ./Total))
 
 
-fileName <- "20240227_samples_table.csv"
+fileName <- "20240309_samples_table.csv"
 outFile   <- paste(outPath, fileName, sep = "")
 write.csv(contingency_table,outFile)
 
